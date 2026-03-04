@@ -24,7 +24,7 @@ STATICFILES_DIRS = [
 # 媒体文件 (教材、头像上传路径)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
+SECURE_CROSS_ORIGIN_OPENER_POLICY = None
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
