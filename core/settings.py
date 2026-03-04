@@ -168,22 +168,3 @@ REST_FRAMEWORK = {
 }
 AUTH_USER_MODEL = 'main_app.User'
 
-USE_DO_SPACES = os.getenv('USE_DO_SPACES', 'False') == 'True'
-
-if USE_DO_SPACES:
-    # DigitalOcean Spaces 配置
-    AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
-    AWS_STORAGE_BUCKET_NAME = '你的Space名称'
-    AWS_S3_ENDPOINT_URL = 'https://你的地区.digitaloceanspaces.com' # 例如 sgp1.digitaloceanspaces.com
-    AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
-    AWS_LOCATION = 'media' # 在 Space 中存储的子目录
-    
-    # 告诉 Django 使用 S3 存储后端
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-    MEDIA_URL = f'{AWS_S3_ENDPOINT_URL}/{AWS_LOCATION}/'
-else:
-    # 本地开发配置 (符合 R1-j 基础要求) 
-    DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
-    MEDIA_URL = '/media/'
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
