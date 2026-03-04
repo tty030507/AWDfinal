@@ -15,7 +15,12 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
 
+# 确保 STATICFILES_DIRS 包含你的前端 js 路径
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 # 媒体文件 (教材、头像上传路径)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
