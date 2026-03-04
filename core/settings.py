@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-lmk5nmd$zu!j#7o+a@_=u$1^ptw6^j6)q*!10hay_5)+0^9a6a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['139.59.241.125', 'localhost', '127.0.0.1']
 
 # 指定 ASGI 入口文件（core 是你的项目名）
 ASGI_APPLICATION = "core.routing.application"
