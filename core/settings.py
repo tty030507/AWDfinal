@@ -168,3 +168,9 @@ REST_FRAMEWORK = {
 }
 AUTH_USER_MODEL = 'main_app.User'
 
+CORS_ALLOWED_ORIGINS = [
+    "http://139.59.241.125",
+    "https://139.59.241.125",
+]
+CSRF_TRUSTED_ORIGINS = ["http://139.59.241.125"]
+
